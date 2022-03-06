@@ -2,8 +2,6 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 
-/// [BlocObserver] for the application which
-/// observes all state changes.
 class MyBlocObserver extends BlocObserver {
   @override
   void onChange(BlocBase bloc, Change change) {
@@ -19,5 +17,17 @@ class MyBlocObserver extends BlocObserver {
       stackTrace: stackTrace,
     );
     super.onError(bloc, error, stackTrace);
+  }
+
+  @override
+  void onEvent(Bloc bloc, Object? event) {
+    super.onEvent(bloc, event);
+    log("${bloc.runtimeType} : $event");
+  }
+
+  @override
+  void onTransition(Bloc bloc, Transition transition) {
+    super.onTransition(bloc, transition);
+    log("${bloc.runtimeType} : $transition");
   }
 }
