@@ -22,12 +22,12 @@ class MyBlocObserver extends BlocObserver {
   @override
   void onEvent(Bloc bloc, Object? event) {
     super.onEvent(bloc, event);
-    log("${bloc.runtimeType} : $event");
+    log("💀 💀 💀 💀 EVENT *** ${bloc.runtimeType} : $event *** 💀 💀 💀 💀");
   }
 
   @override
   void onTransition(Bloc bloc, Transition transition) {
     super.onTransition(bloc, transition);
-    log("${bloc.runtimeType} : $transition");
+    log("🏹 🏹 🏹 🏹 TRANSACTION *** ${bloc.runtimeType} : $transition *** 🏹 🏹 🏹 🏹");
   }
 }
